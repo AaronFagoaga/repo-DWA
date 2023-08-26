@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio II</title>
+</head>
+    <style>
+        /*Estilos de retícula*/
+        .mainContainer{
+            /*Mostrar un diseño en retícula, neesario para que todo funcione con grid*/
+            display: grid;
+        
+            /*Definir el ancho proporcional de las columnas*/
+            grid-template-columns: repeat(4, 1fr);
+
+            /*Espacio entre las celas de la retícula*/
+            grid-gap: 10px;
+            
+            /*Definir las áreas de la retícula:
+            Header ocupará toda la primer fila, el Main ocupará un espacio de la primer columna en la segunda fila
+            y Sidebar las dos últimas columnas de la segunda fila*/
+            grid-template-areas: "card1 card2 card3 card4";
+        }
+
+        /*Estilos para las tarjetas*/
+        .tarjetas{
+            /*Agregar espaciado interno alrededor del contenido.*/
+            padding: 20px;
+
+            /*Agregar un borde alrededor de la tarjeta*/
+            border: 1px solid #ccc;
+
+            /*Alinear contenido al centro*/
+            text-align: center;
+        }
+
+        /*Asignar áreas a las tarjetas usando grid-area*/
+        .card1{
+            /*Asignar el área "card1" al elemento*/
+            grid-area: card1;
+        }
+
+        .card2{
+            /*Asignar el área "card2" al elemento*/
+            grid-area: card2;
+        }
+
+        .card3{
+            /*Asignar el área "card3" al elemento*/
+            grid-area: card3;
+        }
+
+        .card4{
+            /*Asignar el área "card4" al elemento*/
+            grid-area: card4;
+        }
+
+        .interContainer{ /*Diseños del contenedor interno*/
+            /*Mostrar un diseño en retícula, neesario para que todo funcione con grid*/
+            display: grid;
+
+            /*Alineado contenido*/
+            text-align: center;
+        
+            /*Definir el ancho proporcional de las columnas*/
+            grid-template-columns: repeat(2, 2fr);
+
+            /*Espacio entre las celas de la retícula*/
+            grid-gap: 10px;
+            
+            /*Definir las áreas de la retícula:
+            Header ocupará toda la primer fila, el Main ocupará un espacio de la primer columna en la segunda fila
+            y Sidebar las dos últimas columnas de la segunda fila*/
+            grid-template-areas: "image image" "title price";
+        }
+
+        /*Asignando áreas*/
+        .item1{
+         grid-area: image;  /*Asignando area "Image"*/
+        }
+        .item2{
+         grid-area: title;  /*Asignando area "title"*/
+        }
+        .item3{
+         grid-area: price;  /*Asignando area "price"*/
+        }
+
+        /*Tamaños para imagenes*/
+        img{
+            max-width: 90%;
+        }
+    </style>
+<body>
+    <div class="mainContainer"><!-- Contenedor principal -->
+        <div class="tarjetas card1"><!-- Tarjeta 1-->
+            <div class="interContainer"><!-- Contenedor interno -->
+                <img class="item1" src="./img/Image1.png" alt="Graphic Card"><!-- Área: Image -->
+                <p class="title2">Tarjeta Gráfica.</p><!-- Área: Title -->
+                <p class="price3">$ 150.00</p><!-- Área: Price -->
+            </div>
+        </div>
+
+        <div class="tarjetas card2"><!-- Tarjeta 2-->
+            <div class="interContainer"><!-- Contenedor interno -->
+                <img class="item1" src="./img/Image2.png" alt="Proccessor"><!-- Área: Image -->
+                <p class="item2">Procesador i7.</p><!-- Área: Title -->
+                <p class="item3">$ 450.00</p><!-- Área: Price -->
+            </div>
+        </div>
+
+        <div class="tarjetas card3"><!-- Tarjeta 3-->
+            <div class="interContainer"><!-- Contenedor interno -->
+                <img class="item1" src="./img/Image3.png" alt="CPU Fan"><!-- Área: Image -->
+                <p class="item2">Cooler.</p><!-- Área: Title -->
+                <p class="item3">$ 45.50</p><!-- Área: Price -->
+            </div>
+        </div>
+
+        <div class="tarjetas card4"><!-- Tarjeta 4-->
+            <div class="interContainer"><!-- Contenedor interno -->
+                <img class="item1" src="./img/Image4.png" alt="RAM"><!-- Área: Image -->
+                <p class="item2">Combo RAM.</p><!-- Área: Title -->
+                <p class="item3">$ 99.99</p><!-- Área: Price -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

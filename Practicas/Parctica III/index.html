@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica III</title>
+</head>
+    <style>
+        /*Estilos de retícula*/
+        .contenedor-reticula{
+            /*Mostrar un diseño en retícula, neesario para que todo funcione con grid*/
+            display: grid;
+        
+            /*Definir el ancho proporcional de las columnas*/
+            grid-template-columns: 1fr 1fr 1fr;
+
+            /*Espacio entre las celas de la retícula*/
+            grid-gap: 10px;
+            
+            /*Definir las áreas de la retícula:
+            Header ocupará dos espacions de las tres columnas tanto en la fila 1 como en la 2 y slidebar un espacio
+            en la primera fila, main un espacio en la segunda fila*/
+            grid-template-areas: "header header sidebar" "header header main";
+        }
+
+        /*Estilos para los elementos*/
+        .elementos{
+            /*Agregar espaciado interno alrededor del contenido.*/
+            padding: 20px;
+
+            /*Agregar un borde alrededor del elemento*/
+            border: 1px solid #ccc;
+
+            /*Alinear contenido al centro*/
+            text-align: center;
+        }
+
+        /*Asignar áreas a los elementos usando grid-area*/
+        .elemento1{
+            /*Asignar el área "header" al elemento*/
+            grid-area: header;
+        }
+
+        .elemento2{
+            /*Asignar el área "main" al elemento*/
+            grid-area: main;
+        }
+
+        .elemento3{
+            /*Asignar el área "sidebar" al elemento*/
+            grid-area: sidebar;
+        }
+    </style>
+<body>
+    <div class="contenedor-reticula">
+        <div class="elementos elemento1">Encabezado.</div>
+        <div class="elementos elemento2">Contenido principal.</div>
+        <div class="elementos elemento3">Barra lateral.</div>
+    </div>
+</body>
+</html>
